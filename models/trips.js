@@ -6,6 +6,7 @@ class trips extends Model {}
 trips.init(
     {
         //
+        
     },
     {
         sequelize,
@@ -16,4 +17,4 @@ trips.init(
       }
     
 )
-module.exports = trips;
+module.exports = Trips;

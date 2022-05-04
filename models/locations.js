@@ -1,10 +1,27 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class locations extends Model {}
+class Locations extends Model {}
 
-locations.init(
+Locations.init(
     {
+        id:{
+            type: DataTypes.INTEGER,
+            allowNull:false,
+            primaryKey:true,
+            autoIncrement:true
+        },
+        location_name:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
+        travellers_id:{
+            type:DataTypes.INTEGER,
+            references:{
+                model:"travellers",
+                key:"id"
+            }
+        }
         // sql columns
     },
     {
@@ -17,4 +34,4 @@ locations.init(
     
 
 )
-module.exports = locations;
+module.exports = Locations;
